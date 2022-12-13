@@ -1,6 +1,6 @@
 <?php 
   $paragraph = "“The dark is generous, and it is patient, and it always wins — but in the heart of its strength lies its weakness: One lone candle is enough to hold it back. Love is more than a candle. Love can ignite the stars.” — Narrator";
-  $filtered_paragraph = str_replace("Love", "***", $paragraph);
+  $filtered_paragraph = str_replace($_GET["word"], "***", $paragraph);
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,8 @@
   <body>
     <h3> <?php echo $paragraph ?> </h3>
     <p> <?php echo strlen($paragraph)?> </p>
+    <hr>
+    <p> La parola da filtrare è <?php echo $_GET["word"] ?> </p>
     <h3> <?php echo $filtered_paragraph?> </h3>
     <p> <?php echo strlen($filtered_paragraph)?> </p>
   </body>
